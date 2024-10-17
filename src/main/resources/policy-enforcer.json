@@ -1,0 +1,18 @@
+{
+  "realm": "demo",
+  "auth-server-url": "http://localhost:8080",
+  "resource": "asan-client",
+  "credentials": {
+    "secret": "abchaLXeo7cKE593hpjtJw72fnLq9llV"
+  },
+  "paths": [
+    {
+      "path": "/swagger-ui/*",
+      "enforcement-mode": "DISABLED"
+    },
+    {
+      "path": "/v3/api-docs/*",
+      "enforcement-mode": "DISABLED"
+    }
+  ]
+}

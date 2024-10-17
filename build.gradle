@@ -1,0 +1,52 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.3'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'az.keycloak.demo.ayaznacafli'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.postgresql:postgresql:42.7.3'
+
+	compileOnly 'org.projectlombok:lombok'
+//	runtimeOnly 'org.postgresql:postgresql'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+
+
+
+	compileOnly 'org.keycloak:keycloak-servlet-filter-adapter:22.0.5' // Deprecated
+	implementation 'org.keycloak:keycloak-spring-boot-starter:22.0.5' // Deprecated
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+//	compileOnly 'org.keycloak:keycloak-servlet-filter-adapter:22.0.3'
+
+//	implementation 'org.keycloak:keycloak-policy-enforcer:22.0.5'
+//	implementation 'org.keycloak:keycloak-core:22.0.5'
+//	implementation 'org.keycloak:keycloak-admin-client:22.0.5'
+
+
+
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

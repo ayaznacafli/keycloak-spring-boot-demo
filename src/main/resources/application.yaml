@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/keycloak
+    username: keycloak
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/esd-core
+#        opaquetoken:
+#          client-id: esd-core
+#          client-secret: yK6ejlYyl60LdkeRydjeLjghkPwRuxj7
+#          introspection-uri: http://localhost:8080/realms/esd-core/protocol/openid-connect/token/introspect
+server:
+  port: 7070
+
+springdoc:
+  swagger-ui:
+    oauth:
+      client-id: esd-core
+      client-secret: yK6ejlYyl60LdkeRydjeLjghkPwRuxj7
